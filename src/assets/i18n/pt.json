@@ -16,6 +16,9 @@
     "PAGE": "Página do cartão",
     "CERTIFICATES": "Certificados",
     "DISCOUNT": "Desconto",
-    "CREW": "EQUIPA"
+    "CREW": "EQUIPA",
+    "CERTIFICATES_CLICK": "Clique para ver os certificados",
+    "SAVE": "Guardar",
+    "CANCEL": "Cancelar"
   }
 }

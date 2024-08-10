@@ -117,6 +117,10 @@
         *matCellDef="let crew; let i = index"
         class="column-cell wide-column"
       >
+        <button mat-raised-button (click)="openEditCrewDialog(crew, i)">
+          {{ "CREW.EDIT" | translate }}
+        </button>
+        <br />
         <a [routerLink]="['/crew-card', crew.id]" class="mat-raised-button">
           {{ "CREW.PAGE" | translate }}
         </a>

@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{ "CREW.CERTIFICATES" | translate }}</h1>
+<div mat-dialog-content>
+  <ul>
+    <li *ngFor="let certificate of data.certificates">{{ certificate }}</li>
+  </ul>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCloseClick()">Close</button>
+</div>

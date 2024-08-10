@@ -101,4 +101,7 @@ export class CrewService {
   getCrewList(): Crew[] {
     return this.crewList;
   }
+  updateCrew(index: number, updatedCrew: Crew) {
+    this.crewList[index] = updatedCrew;
+  }
 }

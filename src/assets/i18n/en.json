@@ -16,6 +16,9 @@
     "PAGE": "Card Page",
     "CERTIFICATES": "Certificates",
     "DISCOUNT": "Discount",
-    "CREW": "CREW "
+    "CREW": "CREW ",
+    "CERTIFICATES_CLICK": "Click to see the certificates",
+    "SAVE": "Save",
+    "CANCEL": "Cancel"
   }
 }

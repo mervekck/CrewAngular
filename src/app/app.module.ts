@@ -23,6 +23,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
 
 // dil değişimi için gerekli olanlar
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -30,6 +32,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CrewListComponent } from './crew-list/crew-list.component';
 import { CrewCardPageComponent } from './crew-card-page/crew-card-page.component';
+import { CrewEditComponent } from './crew-edit/crew-edit.component';
+import { CrewCeritificatesPopupComponent } from './crew-ceritificates-popup/crew-ceritificates-popup.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -41,6 +45,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     CrewListComponent,
     CrewCardPageComponent,
+    CrewEditComponent,
+    CrewCeritificatesPopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +65,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSort,
     MatIconModule,
     MatCardModule,
+    MatDialogModule,
+    MatListModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {

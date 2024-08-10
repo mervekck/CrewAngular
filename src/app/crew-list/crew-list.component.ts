@@ -5,6 +5,8 @@ import { MatSort } from '@angular/material/sort';
 import { TranslateService } from '@ngx-translate/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { CrewService } from '../services/crew.service';
+import { CrewEditComponent } from '../crew-edit/crew-edit.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-crew-list',
@@ -34,7 +36,8 @@ export class CrewListComponent {
 
   constructor(
     private crewService: CrewService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    public dialog: MatDialog
   ) {}
   applyDiscount(index: number): void {
     const crew = this.dataSource.data[index];
@@ -87,5 +90,18 @@ export class CrewListComponent {
     if (this.paginator) {
       this.paginator.firstPage();
     }
+  }
+  openEditCrewDialog(crew: Crew, index: number): void {
+    const dialogRef = this.dialog.open(CrewEditComponent, {
+      width: '400px',
+      data: crew,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.crewService.updateCrew(index, result);
+        this.loadCrewData(); // Refresh data
+      }
+    });
   }
 }

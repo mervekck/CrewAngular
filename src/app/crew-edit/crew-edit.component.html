@@ -1,0 +1,90 @@
+<h1 mat-dialog-title>Edit Crew</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="crewForm">
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "CREW.FIRST_NAME" | translate }}</mat-label>
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label> {{ "CREW.LAST_NAME" | translate }}</mat-label>
+        <input matInput formControlName="lastName" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "CREW.NATIONALITY" | translate }}</mat-label>
+        <input matInput formControlName="nationality" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label> {{ "CREW.TITLE" | translate }}</mat-label>
+        <mat-select formControlName="title">
+          <mat-option *ngFor="let title of titles" [value]="title">
+            {{ title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "CREW.DAYS_ON_BOARD" | translate }}</mat-label>
+        <input type="number" matInput formControlName="daysOnBoard" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label> {{ "CREW.DAILY_RATE" | translate }}</mat-label>
+        <input type="number" matInput formControlName="dailyRate" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-radio-group formControlName="currency">
+        <mat-label>{{ "CREW.CURRENCY" | translate }}</mat-label>
+        <mat-radio-group formControlName="currency">
+          <mat-radio-button [value]="Currency.USD">USD</mat-radio-button>
+          <mat-radio-button [value]="Currency.EUR">EUR</mat-radio-button>
+        </mat-radio-group>
+      </mat-radio-group>
+    </div>
+
+    <!-- <div class="form-group">
+      <mat-form-field>
+        <mat-label>Certificates</mat-label>
+        <mat-list>
+          <mat-list-item
+            *ngFor="let certificate of crewForm.get('certificates')?.value"
+          >
+            {{ certificate }}
+          </mat-list-item>
+        </mat-list>
+      </mat-form-field>
+    </div> -->
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button
+    mat-button
+    (click)="openCertificateDialog(data.certificates)"
+    class="actions"
+  >
+    {{ "CREW.CERTIFICATES_CLICK" | translate }}
+  </button>
+  <button mat-button type="submit" (click)="onSave()" class="actions">
+    {{ "CREW.SAVE" | translate }}
+  </button>
+  <button mat-button (click)="onCancel()" class="actions">
+    {{ "CREW.CANCEL" | translate }}
+  </button>
+</div>

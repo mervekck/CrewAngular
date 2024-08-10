@@ -16,6 +16,9 @@
     "PAGE": "Page de la carte",
     "CERTIFICATES": "Certificats",
     "DISCOUNT": "Rabais",
-    "CREW": "ÉQUIPAGE"
+    "CREW": "ÉQUIPAGE",
+    "CERTIFICATES_CLICK": "Cliquez pour voir les certificats",
+    "SAVE": "Enregistrer",
+    "CANCEL": "Annuler"
   }
 }
