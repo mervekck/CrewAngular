@@ -6,7 +6,7 @@
 
 .mat-grid-list {
   width: 100%;
-  max-width: 1300px; /* Maksimum genişlik ayarı, isteğe bağlı */
+  max-width: 90%; /* Maksimum genişlik ayarı, isteğe bağlı */
   padding: 5px; /* Grid etrafında boşluk bırakır */
 }
 

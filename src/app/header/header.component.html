@@ -7,6 +7,7 @@
     <mat-form-field appearance="fill">
       <mat-label>{{ "CREW.SELECT_LANGUAGE" | translate }}</mat-label>
       <mat-select
+        [(value)]="lang"
         (selectionChange)="ChangeLang($event)"
         name="language"
         id="language"

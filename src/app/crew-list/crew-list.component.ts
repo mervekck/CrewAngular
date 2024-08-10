@@ -40,10 +40,17 @@ export class CrewListComponent {
     private translate: TranslateService,
     public dialog: MatDialog
   ) {}
+
   applyDiscount(id: number): void {
     const crew = this.dataSource.data.find((c) => c.id === id);
     if (crew) {
-      const discount = crew.discount || 0;
+      let discount = Number(crew.discount);
+      if (discount < 0) {
+        discount = 0;
+      } else if (discount > 100) {
+        discount = 100;
+      }
+      crew.discount = discount;
       crew.totalIncome =
         crew.dailyRate * crew.daysOnBoard -
         (crew.dailyRate * crew.daysOnBoard * discount) / 100;
