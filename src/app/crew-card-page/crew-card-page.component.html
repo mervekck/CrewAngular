@@ -1,0 +1,44 @@
+<div>
+  <mat-icon (click)="goBack()" style="cursor: pointer">arrow_back</mat-icon>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title
+        >{{ crew?.firstName }} {{ crew?.lastName }}</mat-card-title
+      >
+      <mat-card-subtitle>{{ crew?.title }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <br />
+      <p>
+        <strong>{{ "CREW.NATIONALITY" | translate }}:</strong>
+        {{ crew?.nationality }}
+      </p>
+      <p>
+        <strong> {{ "CREW.DAYS_ON_BOARD" | translate }}:</strong>
+        {{ crew?.daysOnBoard }}
+      </p>
+      <p>
+        <strong> {{ "CREW.DAILY_RATE" | translate }}:</strong>
+        {{ crew?.dailyRate }} {{ crew?.currency }}
+      </p>
+      <p>
+        <strong>{{ "CREW.TOTAL_INCOME" | translate }}:</strong>
+        {{ crew?.totalIncome }} {{ crew?.currency }}
+      </p>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ "CREW.CERTIFICATES" | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-grid-list cols="2" rowHeight="2:1" gutterSize="10">
+            <mat-grid-tile *ngFor="let certificate of crew?.certificates">
+              {{ certificate }}
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card-content>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,29 @@
+mat-card {
+  max-width: 600px; /* Kartın maksimum genişliği */
+  margin: 20px auto; /* Kartı ortalamak için otomatik margin */
+  padding: 10px; /* Kartın içindeki boşluk */
+  font-size: 1em;
+}
+
+mat-card-header {
+  background-color: #f5f5f5; /* Başlık arka plan rengi */
+  padding: 16px; /* Başlık içindeki boşluk */
+}
+
+mat-card-title {
+  font-size: 1.2em; /* Başlık yazı boyutu */
+}
+
+mat-card-subtitle {
+  font-size: 1em; /* Alt başlık yazı boyutu */
+}
+
+mat-grid-list {
+  margin-top: 10px; /* Sertifikalar bölümüne üstten boşluk */
+}
+
+mat-grid-tile {
+  background-color: lightblue; /* Sertifikalar kutuları arka plan rengi */
+  color: black;
+  text-align: center; /* Sertifikalar kutularındaki metni ortalamak için */
+}

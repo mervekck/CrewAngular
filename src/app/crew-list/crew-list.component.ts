@@ -24,6 +24,7 @@ export class CrewListComponent {
     'currency',
     'discount',
     'totalIncome',
+    'actions',
   ];
   dataSource = new MatTableDataSource<Crew>();
 

@@ -21,12 +21,15 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 // dil değişimi için gerekli olanlar
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CrewListComponent } from './crew-list/crew-list.component';
+import { CrewCardPageComponent } from './crew-card-page/crew-card-page.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -37,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     HomeComponent,
     CrewListComponent,
+    CrewCardPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatRadioModule,
     MatPaginator,
     MatSort,
+    MatIconModule,
+    MatCardModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
