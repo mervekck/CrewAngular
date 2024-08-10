@@ -1,0 +1,25 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-grid-list {
+  width: 100%;
+  max-width: 1300px; /* Maksimum genişlik ayarı, isteğe bağlı */
+  padding: 5px; /* Grid etrafında boşluk bırakır */
+}
+
+mat-grid-tile {
+  border: 1px solid #ddd; /* Grid tile'larının etrafına ince gri kenar çizer */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge ekler */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(235, 233, 249);
+}
+.language-selector {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

@@ -1,0 +1,134 @@
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef class="column-header narrow-column">
+        ID
+      </th>
+      <td mat-cell *matCellDef="let element" class="column-cell narrow-column">
+        {{ element.id }}
+      </td>
+    </ng-container>
+
+    <!-- First Name Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef class="column-header narrow-column">
+        {{ "CREW.FIRST_NAME" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="column-cell narrow-column">
+        {{ element.firstName }}
+      </td>
+    </ng-container>
+
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef class="column-header narrow-column">
+        {{ "CREW.LAST_NAME" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="column-cell narrow-column">
+        {{ element.lastName }}
+      </td>
+    </ng-container>
+
+    <!-- Nationality Column -->
+    <ng-container matColumnDef="nationality">
+      <th mat-header-cell *matHeaderCellDef class="column-header narrow-column">
+        {{ "CREW.NATIONALITY" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="column-cell narrow-column">
+        {{ element.nationality }}
+      </td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef class="column-header narrow-column">
+        {{ "CREW.TITLE" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="column-cell narrow-column">
+        {{ element.title }}
+      </td>
+    </ng-container>
+
+    <!-- Days On Board Column -->
+    <ng-container matColumnDef="daysOnBoard">
+      <th mat-header-cell *matHeaderCellDef class="column-header narrow-column">
+        {{ "CREW.DAYS_ON_BOARD" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="column-cell narrow-column">
+        {{ element.daysOnBoard }}
+      </td>
+    </ng-container>
+
+    <!-- Daily Rate Column -->
+    <ng-container matColumnDef="dailyRate">
+      <th mat-header-cell *matHeaderCellDef class="column-header narrow-column">
+        {{ "CREW.DAILY_RATE" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="column-cell narrow-column">
+        {{ element.dailyRate | currency : element.currency }}
+      </td>
+    </ng-container>
+
+    <!-- Currency Column -->
+    <ng-container matColumnDef="currency">
+      <th mat-header-cell *matHeaderCellDef class="column-header narrow-column">
+        {{ "CREW.CURRENCY" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="column-cell narrow-column">
+        {{ element.currency }}
+      </td>
+    </ng-container>
+    <!-- Discount Column -->
+    <ng-container matColumnDef="discount">
+      <th mat-header-cell *matHeaderCellDef class="column-header narrow-column">
+        {{ "CREW.DISCOUNT" | translate }}
+      </th>
+      <td
+        mat-cell
+        *matCellDef="let element; let i = index"
+        class="column-cell narrow-column"
+      >
+        <input
+          class="number-input"
+          type="number"
+          matInput
+          [(ngModel)]="element.discount"
+          (ngModelChange)="applyDiscount(i)"
+        />
+      </td>
+    </ng-container>
+    <!-- Total Income Column -->
+    <ng-container matColumnDef="totalIncome">
+      <th mat-header-cell *matHeaderCellDef class="column-header narrow-column">
+        {{ "CREW.TOTAL_INCOME" | translate }}
+      </th>
+      <td mat-cell *matCellDef="let element" class="column-cell narrow-column">
+        {{ element.totalIncome | currency : element.currency }}
+      </td>
+    </ng-container>
+
+    <!-- Header Row -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <!-- Data Rows -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <!-- No Data Row -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        No data matching the filter "{{ input.nativeElement.value }}"
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    aria-label="Select page of users"
+  ></mat-paginator>
+</div>
+
+<div class="total-summary">
+  <p>USD: {{ totalIncomeSumUSD | currency : "USD" }}</p>
+  <p>EUR: {{ totalIncomeSumEUR | currency : "EUR" }}</p>
+</div>

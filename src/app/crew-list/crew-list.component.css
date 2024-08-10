@@ -1,0 +1,60 @@
+.table-container {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto; /* Tabloyu yatayda ortalar */
+}
+table.mat-table {
+  width: 100%;
+  /* Sabit yükseklik ayarı */
+  height: 400px;
+  overflow-y: auto; /* Yükseklik sınırlı olduğu için yatay kaydırma */
+  table-layout: fixed; /* Sütun genişliklerini sabitler */
+}
+
+.column-header {
+  font-size: 11px; /* Başlık yazı boyutunu küçültür */
+  text-align: center;
+}
+
+.column-cell {
+  font-size: 11px; /* Hücre yazı boyutunu küçültür */
+  text-align: center;
+}
+
+.narrow-column {
+  min-width: 50px; /* Dar sütunlar için minimum genişlik */
+  max-width: 50px;
+}
+
+.wide-column {
+  min-width: 100px; /* Geniş sütunlar için minimum genişlik */
+  max-width: 100px;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  padding: 8px; /* Hücre içi boşluk */
+  border: 1px solid #ddd; /* Hücre sınırları */
+}
+button {
+  align-self: flex-start; /* Butonu sola hizalar */
+  margin-bottom: 10px; /* Buton ile tablo arasına boşluk bırakır */
+  font-size: 10px; /* Font boyutunu daha da küçültür */
+  padding: 4px 8px; /* Butonun içindeki boşluğu küçültür */
+}
+.number-input {
+  width: 50px; /* Genişliği daraltır, ihtiyaca göre ayarlanabilir */
+  margin: 0; /* Gereksiz boşlukları kaldırır */
+  padding: 8px; /* İçerik ile kenar arasındaki boşluğu ayarlar */
+  font-size: 11px; /* Yazı boyutunu ayarlar */
+  border-radius: 4px; /* Köşeleri yuvarlatır */
+  border: 1px solid #ccc; /* Hafif gri bir kenarlık ekler */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* İç gölge efekti */
+}
+.total-summary {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+}
