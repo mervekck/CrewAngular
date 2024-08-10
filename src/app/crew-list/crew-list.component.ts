@@ -84,13 +84,7 @@ export class CrewListComponent {
     }
     this.crewList = this.crewService.getCrewList();
   }
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-    if (this.paginator) {
-      this.paginator.firstPage();
-    }
-  }
+
   openEditCrewDialog(crew: Crew, index: number): void {
     const dialogRef = this.dialog.open(CrewEditComponent, {
       width: '400px',
@@ -103,5 +97,11 @@ export class CrewListComponent {
         this.loadCrewData(); // Refresh data
       }
     });
+  }
+  deleteCrew(id: number): void {
+    console.log('Deleting crew with id:', id); // Debug: Hangi id siliniyor
+    this.crewService.deleteCrew(id);
+    this.loadCrewData(); // Refresh data
+    console.log('Crew deleted with id:', id); // Debug: Silme sonrası id
   }
 }

@@ -104,4 +104,14 @@ export class CrewService {
   updateCrew(index: number, updatedCrew: Crew) {
     this.crewList[index] = updatedCrew;
   }
+  deleteCrew(id: number): void {
+    const index = this.crewList.findIndex((crew) => crew.id === id);
+    if (index > -1) {
+      console.log('Deleting crew with id:', id); // Debug: Hangi id siliniyor
+      this.crewList.splice(index, 1);
+      console.log('Updated crew list:', this.crewList); // Debug: Güncellenmiş liste
+    } else {
+      console.error('Invalid id for deletion:', id); // Debug: Geçersiz id
+    }
+  }
 }

@@ -120,6 +120,9 @@
         <button mat-raised-button (click)="openEditCrewDialog(crew, i)">
           {{ "CREW.EDIT" | translate }}
         </button>
+        <button mat-raised-button (click)="deleteCrew(crew.id)">
+          {{ "CREW.DELETE" | translate }}
+        </button>
         <br />
         <a [routerLink]="['/crew-card', crew.id]" class="mat-raised-button">
           {{ "CREW.PAGE" | translate }}
