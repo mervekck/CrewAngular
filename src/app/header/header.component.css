@@ -1,0 +1,25 @@
+mat-toolbar {
+  background-color: blueviolet;
+  color: white;
+  display: flex;
+  align-items: center; /* İçeriği dikey olarak ortalar */
+  height: 64px; /* İsteğe bağlı olarak toolbar yüksekliği */
+}
+.spacer-left {
+  flex: 1; /* Sol boşluk için */
+}
+
+.title {
+  text-align: center;
+  flex: 0 1 auto; /* Başlık için */
+}
+
+.spacer-right {
+  flex: 1; /* Sağ boşluk için */
+}
+.form-container {
+  display: flex;
+  justify-content: flex-end; /* Sağda hizalar */
+  padding: 16px; /* İçerik etrafına boşluk ekler */
+  margin-top: 20px;
+}

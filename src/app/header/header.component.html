@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <span class="spacer-left"></span>
+  <span class="title">{{ "CREW.CREW_LISTS" | translate }}</span>
+  <span class="spacer-right"></span>
+
+  <div class="form-container">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ "CREW.SELECT_LANGUAGE" | translate }}</mat-label>
+      <mat-select
+        (selectionChange)="ChangeLang($event)"
+        name="language"
+        id="language"
+      >
+        <mat-option *ngFor="let lang of languages" [value]="lang.code">
+          {{ lang.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</mat-toolbar>

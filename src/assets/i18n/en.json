@@ -1,0 +1,21 @@
+{
+  "CREW": {
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "NATIONALITY": "Nationality",
+    "TITLE": "Title",
+    "DAYS_ON_BOARD": "Days On Board",
+    "DAILY_RATE": "Daily Rate",
+    "CURRENCY": "Currency",
+    "TOTAL_INCOME": "Total Income",
+    "ACTIONS": "Actions",
+    "ADD_CREW": "Add Crew",
+    "EDIT": "Edit",
+    "DELETE": "Delete",
+    "SELECT_LANGUAGE": "Select Language",
+    "PAGE": "Card Page",
+    "CERTIFICATES": "Certificates",
+    "DISCOUNT": "Discount",
+    "CREW_LISTS": "Crew Lists"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "CREW": {
+    "FIRST_NAME": "Prénom",
+    "LAST_NAME": "Nom",
+    "NATIONALITY": "Nationalité",
+    "TITLE": "Titre",
+    "DAYS_ON_BOARD": "Jours à Bord",
+    "DAILY_RATE": "Taux Journalier",
+    "CURRENCY": "Devise",
+    "TOTAL_INCOME": "Revenu Total",
+    "ACTIONS": "Actions",
+    "ADD_CREW": "Ajouter un équipage",
+    "EDIT": "Modifier",
+    "DELETE": "Supprimer",
+    "SELECT_LANGUAGE": "Sélectionner la langue",
+    "PAGE": "Page de la carte",
+    "CERTIFICATES": "Certificats",
+    "DISCOUNT": "Rabais",
+    "CREW_LISTS": "Listes d'équipage"
+  }
+}
