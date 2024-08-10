@@ -40,14 +40,17 @@ export class CrewListComponent {
     private translate: TranslateService,
     public dialog: MatDialog
   ) {}
-  applyDiscount(index: number): void {
-    const crew = this.dataSource.data[index];
-    const discount = crew.discount || 0;
-    crew.totalIncome =
-      crew.dailyRate * crew.daysOnBoard -
-      (crew.dailyRate * crew.daysOnBoard * discount) / 100;
-    this.dataSource.data = [...this.dataSource.data];
+  applyDiscount(id: number): void {
+    const crew = this.dataSource.data.find((c) => c.id === id);
+    if (crew) {
+      const discount = crew.discount || 0;
+      crew.totalIncome =
+        crew.dailyRate * crew.daysOnBoard -
+        (crew.dailyRate * crew.daysOnBoard * discount) / 100;
+      this.dataSource.data = [...this.dataSource.data];
+    }
   }
+
   ngOnInit() {
     this.loadCrewData();
   }
