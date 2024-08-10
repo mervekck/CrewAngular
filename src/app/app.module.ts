@@ -34,6 +34,7 @@ import { CrewListComponent } from './crew-list/crew-list.component';
 import { CrewCardPageComponent } from './crew-card-page/crew-card-page.component';
 import { CrewEditComponent } from './crew-edit/crew-edit.component';
 import { CrewCeritificatesPopupComponent } from './crew-ceritificates-popup/crew-ceritificates-popup.component';
+import { CrewAddComponent } from './crew-add/crew-add.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -47,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CrewCardPageComponent,
     CrewEditComponent,
     CrewCeritificatesPopupComponent,
+    CrewAddComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,82 @@
+<h1 mat-dialog-title>Add New Crew</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="crewForm">
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Nationality</mat-label>
+        <input matInput formControlName="nationality" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <mat-select formControlName="title">
+          <mat-option *ngFor="let title of titles" [value]="title">
+            {{ title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Days On Board</mat-label>
+        <input type="number" matInput formControlName="daysOnBoard" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Daily Rate</mat-label>
+        <input type="number" matInput formControlName="dailyRate" />
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-radio-group formControlName="currency">
+        <mat-label>Currency</mat-label>
+        <mat-radio-group formControlName="currency">
+          <mat-radio-button [value]="Currency.USD">USD</mat-radio-button>
+          <mat-radio-button [value]="Currency.EUR">EUR</mat-radio-button>
+        </mat-radio-group>
+      </mat-radio-group>
+    </div>
+    <div class="form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Certificates</mat-label>
+        <mat-select formControlName="certificates" multiple>
+          <mat-option
+            *ngFor="let certificate of certificates"
+            [value]="certificate"
+          >
+            {{ certificate }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="crewForm.get('certificates')?.invalid">
+          At least one certificate must be selected.
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button type="submit" (click)="onSave()">Save</button>
+  <button mat-button (click)="onCancel()">Cancel</button>
+</div>

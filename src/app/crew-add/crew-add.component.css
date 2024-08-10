@@ -1,0 +1,30 @@
+.example-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1px; /* Her bir form alanı arasına boşluk ekler */
+  opacity: 1;
+}
+.dialog-container {
+  width: 500px; /* Form genişliğini sabitler */
+}
+
+.mat-dialog-content {
+  max-height: 500px; /* İhtiyaca göre ayarlayın */
+  overflow: auto; /* İçerik fazla olduğunda kaydırma ekler */
+  padding: 20px; /* İçerik etrafında boşluk bırakır */
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end; /* Butonları sağa hizalar */
+  padding: 10px; /* Butonlar etrafında boşluk bırakır */
+}
+
+mat-form-field {
+  width: 100%;
+  max-height: 60px;
+  display: block;
+}

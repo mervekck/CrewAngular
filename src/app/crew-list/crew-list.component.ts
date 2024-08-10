@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { CrewService } from '../services/crew.service';
 import { CrewEditComponent } from '../crew-edit/crew-edit.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CrewAddComponent } from '../crew-add/crew-add.component';
 
 @Component({
   selector: 'app-crew-list',
@@ -103,5 +104,17 @@ export class CrewListComponent {
     this.crewService.deleteCrew(id);
     this.loadCrewData(); // Refresh data
     console.log('Crew deleted with id:', id); // Debug: Silme sonrası id
+  }
+  openAddCrewDialog(): void {
+    const dialogRef = this.dialog.open(CrewAddComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.crewService.addCrew(result);
+        this.loadCrewData(); // Refresh data
+      }
+    });
   }
 }

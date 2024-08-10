@@ -1,4 +1,7 @@
 <div class="table-container">
+  <button mat-raised-button (click)="openAddCrewDialog()">
+    {{ "CREW.ADD_CREW" | translate }}
+  </button>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- Id Column -->
     <ng-container matColumnDef="id">

@@ -114,4 +114,17 @@ export class CrewService {
       console.error('Invalid id for deletion:', id); // Debug: Geçersiz id
     }
   }
+  addCrew(crew: Crew) {
+    // Mevcut listede en yüksek ID'yi bul
+    const maxId = this.crewList.reduce(
+      (max, c) => (c.id > max ? c.id : max),
+      0
+    );
+
+    // Yeni eklenen crew'e ID atama
+    crew.id = maxId + 1;
+
+    // Tayfa ekleme
+    this.crewList.push(crew);
+  }
 }
